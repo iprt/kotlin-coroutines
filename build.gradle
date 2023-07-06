@@ -1,0 +1,62 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.12.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+
+    id "org.jetbrains.kotlin.jvm" version "1.4.21"
+    id "org.jetbrains.kotlin.plugin.spring" version "1.4.21"
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.4.21'
+
+    id 'java'
+}
+
+repositories {
+    maven { url 'https://maven.aliyun.com/repository/public' }
+    mavenLocal()
+}
+
+group = 'org.iproute'
+version = '1.0.0-SNAPSHOT'
+
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.targetCompatibility = JavaVersion.VERSION_1_8
+
+compileKotlin {
+    kotlinOptions {
+        freeCompilerArgs = ["-Xjsr305=strict"]
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        freeCompilerArgs = ["-Xjsr305=strict"]
+        jvmTarget = "1.8"
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+// sourceSets {
+//    main.kotlin.srcDirs += 'src/main/kotlin'
+//    main.java.srcDirs += 'src/main/java'
+//}
+
+dependencies {
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // kotlin
+    implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
+    implementation 'org.jetbrains.kotlin:kotlin-reflect'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core"
+
+}
+
+test {
+    useJUnitPlatform()
+}
