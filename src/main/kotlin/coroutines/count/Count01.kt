@@ -1,4 +1,4 @@
-package org.iproute.kotlin.coroutines.count.Count01.kt
+package coroutines.count.Count01.kt
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

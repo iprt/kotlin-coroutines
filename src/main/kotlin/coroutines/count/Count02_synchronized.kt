@@ -1,4 +1,4 @@
-package org.iproute.kotlin.coroutines.count.Count02_synchronized
+package coroutines.count.Count02_synchronized
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

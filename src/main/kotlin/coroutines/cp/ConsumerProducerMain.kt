@@ -1,4 +1,4 @@
-package org.iproute.kotlin.coroutines.cp.ConsumerProducerMain.kt
+package coroutines.cp.ConsumerProducerMain.kt
 
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
